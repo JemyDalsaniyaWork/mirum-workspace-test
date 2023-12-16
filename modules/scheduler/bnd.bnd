@@ -1,0 +1,5 @@
+Bundle-Name: scheduler
+Bundle-SymbolicName: com.scheduler
+Bundle-Version: 1.0.0
+Export-Package: com.scheduler.constants
+Embed-Dependency:your-library.jar

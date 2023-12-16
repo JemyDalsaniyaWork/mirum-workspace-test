@@ -1,0 +1,21 @@
+Bundle-Name: mirum-generate-invoice-rest-module
+Bundle-SymbolicName: mirum.generate.invoice.rest.module
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration
+
+Import-Package: *; version="0";resolution:=optional
+
+Include-Resource: \
+    @kernel-8.0.0.jar,\
+    @html2pdf-5.0.0.jar,\
+    @styled-xml-parser-8.0.0.jar,\
+    @commons-8.0.0.jar,\
+    @io-8.0.0.jar,\
+    @layout-8.0.0.jar,\
+    @svg-8.0.0.jar,\
+    @forms-8.0.0.jar,\
+    @freemarker-2.3.32.jar,\
+    @typography-4.0.0.jar,\
+    @jsch-0.1.55.jar,
+
+\

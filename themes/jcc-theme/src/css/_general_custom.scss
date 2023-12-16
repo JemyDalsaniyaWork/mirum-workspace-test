@@ -1,0 +1,115 @@
+.flex-it {
+  display: flex;
+}
+
+.flex-nowrap {
+  -moz-box-wrap: nowrap;
+  -webkit-box-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flexbox-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.flex-row {
+  -ms-flexbox-direction: row;
+  flex-direction: row;
+}
+
+.flex-col {
+  -ms-flexbox-direction: column;
+  flex-direction: column;
+}
+
+.flex-align-between {
+  -webkit-box-align-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-align-content: space-between;
+  align-content: space-between;
+}
+
+.flex-align-center {
+  -webkit-box-align-content: center;
+  -webkit-align-content: center;
+  -ms-flex-align-content: center;
+  align-content: center;
+}
+
+.flex-align-start {
+  -webkit-box-align-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-align-content: flex-start;
+  align-content: flex-start;
+}
+
+.flex-align-item-start {
+  align-items: flex-start;
+}
+
+.flex-align-item-center {
+  align-items: center;
+}
+
+.flex-start-all {
+  justify-content: flex-start;
+  align-items: flex-start;
+  -webkit-box-align-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-align-content: flex-start;
+  align-content: flex-start;
+}
+
+.flex-align-item-stretch {
+  align-items: stretch;
+}
+
+.flex-justify-between {
+  justify-content: space-between;
+}
+
+.justify-content-space-around {
+  justify-content: space-around;
+}
+
+.justify-content-space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-justify-start {
+  justify-content: flex-start;
+}
+
+.flex-justify-end {
+  justify-content: flex-end;
+}
+
+.flex-wrap {
+  -moz-box-wrap: wrap;
+  -webkit-box-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flexbox-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-item-auto {
+  -webkit-box-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  /* OLD - Firefox 19- */
+  /* Chrome */
+  /* IE 10 */
+  flex: 1;
+}
+
+.flex-align-item-end {
+  align-items: flex-end;
+}
+
+.flex-inline {
+  display: inline-flex;
+  align-self: auto;
+}

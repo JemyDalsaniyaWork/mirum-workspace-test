@@ -1,0 +1,323 @@
+@import "components/breadcrumb";
+@import "components/color";
+@import "components/group-item";
+@import "components/info-panel";
+@import "components/navbars";
+@import "components/sidebar";
+@import "components/table";
+@import "components/widget";
+@import "portlet/portlet";
+@import "portlet/portlet_decorators";
+
+@import "custom_properties/custom_properties_set";
+@import "general_custom";
+@import "pagination_custom";
+@import "filters_custom";
+@import "labels_custom";
+@import "forms";
+@import "chat";
+@import "searchResults";
+@import "login";
+$langAr: "ar-SA";
+
+// @import 'fonts/fontFaces';
+
+body {
+  header {
+    .field-wrapper {
+      position: absolute;
+      right: 4px;
+      top: 2px;
+
+      a {
+        color: #fff;
+      }
+    }
+
+    .field-wrapper,
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .portlet {
+      margin-bottom: 0;
+
+      &:hover {
+        z-index: 1034;
+      }
+    }
+
+    .search-input {
+      font-size: 0.88rem;
+      padding: 0.28rem 2rem 0.28rem 1rem;
+    }
+
+    .text-default {
+      color: #6b6c7e;
+      font-weight: 600;
+    }
+
+    .user-personal-bar {
+      .fieldset {
+        position: relative;
+      }
+
+      .user-avatar-link .panel-notifications-count {
+        right: calc(100% - 0.75rem);
+        top: -0.35rem;
+      }
+    }
+  }
+
+  .user-avatar-link {
+    display: block;
+    position: relative;
+
+    .panel-notifications-count {
+      display: block;
+      margin: 0;
+      max-width: none;
+      position: absolute;
+      right: calc(100% - 0.7rem);
+      top: -0.4rem;
+    }
+
+    .text-default {
+      align-items: center;
+      display: flex;
+
+      .user-full-name {
+        margin-left: 0.5rem;
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.btn-group + .info-panel {
+  @include media-breakpoint-up(sm) {
+    top: auto;
+  }
+}
+
+#footer {
+  color: #fff;
+  margin-top: 1rem;
+
+  > .container {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+
+  .jcc-footer {
+    label.ddm-label {
+      display: none !important;
+    }
+  }
+}
+
+.yui3-skin-sam .yui3-calendar-prevmonth-day,
+.yui3-skin-sam .yui3-calendar-nextmonth-day {
+  color: #717171;
+}
+
+// @font-face {
+// 	font-family: '29LTBukra';
+// 	src: url("./fonts/29LTBokra/29LT Bukra-Light.otf") format("otf");
+// 	font-weight: 300;
+// 	font-style: normal;
+// 	font-display: swap;
+// }
+
+@font-face {
+  font-family: "29LTBukra";
+  src: url("./fonts/29LTBokra/29LTBukra-Lt.eot");
+  src: url("./fonts/29LTBokra/29LTBukra-Lt.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/29LTBokra/29LTBukra-Lt.woff2") format("woff2"),
+    url("./fonts/29LTBokra/29LTBukra-Lt.woff") format("woff"),
+    url("./fonts/29LTBokra/29LTBukra-Lt.ttf") format("truetype"),
+    url("./fonts/29LTBokra/29LTBukra-Lt.svg#29LTBukra-Lt") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+// @font-face {
+// 	font-family: '29LTBukra';
+// 	src: url("./fonts/29LTBokra/29LT Bukra-Regular.otf") format("otf");
+// 	font-weight: 400;
+// 	font-style: normal;
+// 	font-display: swap;
+// }
+
+// @font-face {
+// 	font-family: '29LTBukra';
+// 	src: url("./fonts/29LTBokra/29LT Bukra-Bold.otf") format("otf");
+// 	font-weight: 700;
+// 	font-style: normal;
+// 	font-display: swap;
+// }
+
+@font-face {
+  font-family: "SFProText";
+  src: url("./fonts/SFProText/SFProText-Regular-1.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html:lang(ar),
+html:lang(ar-SA),
+body:lang(ar),
+body:lang(ar-SA) {
+  font-family: var(--arabic-font-family) !important;
+}
+
+.lfr-spa-loading-bar {
+  background: var(--primary-color) !important;
+}
+
+// a {
+//   color: var(--primary-color) !important;
+// }
+// a:visited {
+//   color: var(--primary-color-d1) !important;
+// }
+// a:hover {
+//   color: #8fe7ef !important;
+// }
+
+//Share this
+
+.st-btn[data-network="twitter"],
+.st-btn[data-network="pinterest"],
+.st-btn[data-network="facebook"],
+.st-btn[data-network="email"] {
+  display: none !important;
+}
+
+html {
+  font-size: 16px !important;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px !important;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 16px !important;
+  }
+}
+
+// start@light
+
+$--white-color: --white-color;
+
+// $theme-map-theme-light: (
+//   $--white-color: #272833,
+// );
+
+// $theme-map-theme-dark: (
+//   $--white-color: #ffffff,
+// );
+
+// .theme-dark {
+//   @include spread-map($theme-map-theme-dark);
+// }
+// .theme-light {
+//   @include spread-map($theme-map-theme-light);
+// }
+
+// .white-color {
+//   color: var($--white-color);
+// }
+.white-color-form-title {
+  .lfr-ddm__default-page-header-title {
+    color: var($--white-color);
+  }
+}
+
+.overflow-x-only {
+  .jcc-content-auto {
+    overflow: hidden !important;
+    overflow-x: auto !important;
+  }
+}
+// end@light
+
+//@at-root
+
+#recaptcha-container {
+  div > p,
+  > p:first-child {
+    background: var(--gradientBlueHorizontal);
+    box-shadow: none !important;
+    padding: 12px 25px 12px 28px;
+    gap: 8px;
+    height: 48px;
+    border-radius: 52px;
+    text-align: center;
+    width: auto !important;
+    margin-top: 10px;
+    color: #fff !important;
+    width: auto;
+  }
+}
+.form-group {
+  label + div {
+    margin-top: 0 !important;
+  }
+}
+//
+/* @noflip */
+.jcc-share-link .sharethis-inline-share-buttons {
+  left: -69px;
+}
+/* @noflip */
+.jcc-share-link .sharethis-inline-share-buttons:lang(#{$langAr}) {
+  left: unset;
+  right: -4px;
+}
+
+.jcc-share-link {
+  cursor: pointer;
+  .sharethis-inline-share-buttons {
+    top: -37px !important;
+    opacity: 0 !important;
+    pointer-events: none;
+    display: flex !important;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out !important;
+    transform: translateY(10px);
+    width: 123px !important;
+    .st-btn {
+      display: block !important;
+    }
+  }
+  &.show-share {
+    .sharethis-inline-share-buttons {
+      opacity: 1 !important;
+      transform: translateY(0px);
+      pointer-events: all;
+    }
+  }
+  .st-btn[data-network="twitter"],
+  .st-btn[data-network="pinterest"],
+  .st-btn[data-network="facebook"],
+  .st-btn[data-network="email"] {
+    display: block !important;
+  }
+}
+.jcc-share-btn-enabled {
+  .jcc-event-card:hover {
+    z-index: 2;
+    .jcc-header {
+      overflow: unset;
+    }
+  }
+}

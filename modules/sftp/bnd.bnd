@@ -1,0 +1,6 @@
+Bundle-Name: sftp
+Bundle-SymbolicName: com.liferay.sftp
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.sftp.constants
+Import-Package: com.jcraft.jsch.*;resolution:=optional
+

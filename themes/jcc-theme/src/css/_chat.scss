@@ -1,0 +1,471 @@
+@use "sass:math";
+@use "sass:map";
+$langAr: "ar-SA";
+//font
+$primaryFontFamily: var(--primary-font);
+//color
+$primaryColor: var(--primary-color);
+$secondaryColor: var(--secondary-color);
+$secondary11color: var(--secondary-11-color);
+$primaryColorD1: var(--primary-color-d1); //new #0097A5
+//gradient background
+$gradientBlueHorizontal: var(--gradientBlueHorizontal);
+/*chatStart*/
+.cx-titlebar .cx-icon {
+  display: none;
+}
+
+.cx-common-container .cx-titlebar .cx-title {
+  font-size: 36px;
+  line-height: 54px;
+  font: var(--font-family-monospace);
+  font-family: var(--primary-font);
+  color: var(--btn-primary-hover-color, #fff) !important;
+  text-align: left !important;
+  margin: 0 8px 0 0 !important;
+}
+
+.cx-widget.cx-theme-light .cx-titlebar .cx-title {
+  color: var(--btn-primary-hover-color, #fff) !important;
+  display: block;
+  position: relative;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.cx-common-container .cx-buttons-window-control {
+  top: 3px !important;
+  direction: rtl;
+  left: unset !important;
+  right: 12px !important;
+}
+.cx-common-container .cx-buttons-window-control button {
+  display: flex !important;
+}
+
+.cx-button-group.cx-buttons-window-control {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+}
+
+.cx-common-container.cx-close .cx-buttons-window-control button.cx-button-close,
+.cx-common-container.cx-minimize
+  .cx-buttons-window-control
+  button.cx-button-maximize,
+.cx-common-container.cx-minimize
+  .cx-buttons-window-control
+  button.cx-button-minimize {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cx-common-container.cx-minimize
+  .cx-buttons-window-control
+  button.cx-button-minimize {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  svg {
+    width: 12px;
+    height: auto;
+    display: block;
+    margin-top: -12px;
+  }
+}
+
+.cx-common-container.cx-close
+  .cx-buttons-window-control
+  button.cx-button-close {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  svg {
+    width: 12px;
+  }
+}
+
+.cx-common-container.cx-minimize
+  .cx-buttons-window-control
+  button.cx-button-maximize {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  svg {
+    width: 12px;
+  }
+}
+
+.cx-control-label {
+  font-size: 16px;
+  line-height: 54px;
+  font: var(--font-family-monospace);
+  font-family: var(--primary-font);
+  padding-bottom: 8px;
+  display: block;
+  position: relative;
+  color: #fff !important;
+  text-align: left !important;
+}
+
+.cx-form-inputs th {
+  padding-left: 8px;
+  padding-right: 0;
+  text-align: right;
+}
+
+.cx-widget.cx-theme-light .cx-buttons-window-control .cx-svg-icon-tone1 {
+  fill: #fff;
+}
+.cx-widget .cx-button-group .cx-btn:hover {
+  color: var(--btn-primary-hover-color, #fff) !important;
+}
+.cx-powered-by {
+  display: none;
+}
+.cx-webchat.cx-widget.cx-theme-light:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clear: both;
+  display: block;
+  border-radius: 42px;
+}
+
+:lang(ar-SA) {
+  .cx-webchat.cx-widget.cx-theme-light:before {
+    left: unset !important;
+    right: 0 !important;
+  }
+}
+
+.cx-form-wrapper .cx-button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse !important;
+}
+
+.cx-widget .cx-button-group .cx-btn {
+  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: none !important;
+  padding: 12px 24px 12px 24px;
+  gap: 8px;
+  height: 48px;
+  border-radius: 52px !important;
+  background: var(--gradientBlueHorizontal) !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border-style: unset !important;
+  border-width: 0.0625rem !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  font-size: 1rem !important;
+  font-weight: var(--font-weight-semi-bold, 600) !important;
+  line-height: 1.5 !important;
+  padding-bottom: 0.4375rem !important;
+  padding-right: 0.9375rem !important;
+  padding-left: 0.9375rem !important;
+  padding-top: 0.4375rem !important;
+  text-align: center !important;
+  text-transform: none !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  -ms-user-select: none !important;
+  -moz-user-select: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  vertical-align: middle !important;
+  color: var(--btn-primary-hover-color, #fff) !important;
+  font-family: var(--primary-font);
+}
+
+.cx-webchat .cx-form {
+  table {
+    tr {
+      display: block;
+      margin-bottom: 18px;
+    }
+    td {
+      display: block;
+    }
+    th {
+      display: block;
+      label {
+        color: #fff !important;
+        text-align: right;
+        /* 12/Semibold - Arabic */
+        font-family: var(--primary-font);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%; /* 18px */
+        display: block;
+      }
+    }
+  }
+}
+
+.cx-webchat .cx-form table td input {
+  text-align: left !important;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-primary, #37bac6);
+}
+
+.cx-common-container {
+  .cx-footer {
+    background-color: unset !important;
+  }
+  .cx-titlebar {
+    border-color: #cdd2d9;
+    background-color: unset !important;
+  }
+}
+.cx-webchat .cx-form {
+  padding: 0;
+}
+.cx-webchat .cx-body {
+  padding-top: 10px;
+}
+.cx-webchat .cx-form table {
+  margin-bottom: 0;
+}
+
+.cx-widget {
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 42px;
+  background-color: rgba(6, 19, 37, 0.9) !important;
+}
+
+.cx-widget.cx-theme-light input,
+.cx-widget.cx-theme-light select,
+.cx-widget.cx-theme-light textarea {
+  color: #fff !important;
+}
+
+.cx-emoji-hasmenu {
+  display: none;
+}
+.cx-loading-icon {
+  display: none;
+}
+.cx-message.cx-date {
+  display: none !important;
+}
+.cx-message.cx-system {
+  display: none !important;
+}
+.cx-common-screen-reader {
+  display: none !important;
+}
+html > body {
+  .cx-webchat .cx-transcript .cx-message {
+    .cx-message-text {
+      color: rgba(23, 101, 139, 1);
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  .cx-widget.cx-theme-light .cx-btn-default {
+    background: unset !important;
+    border: 2px solid #fff !important;
+  }
+
+  .cx-webchat
+    .cx-transcript
+    .cx-message-group
+    > .cx-message.cx-participant:last-child
+    .cx-time {
+    display: none !important;
+  }
+  .cx-webchat
+    .cx-transcript
+    .cx-message-group
+    > .cx-message.cx-participant:first-child
+    .cx-name {
+    display: none !important;
+  }
+  .cx-widget.cx-theme-light .cx-svg-icon-tone1 {
+    fill: #fff;
+  }
+  .cx-webchat {
+    font-family: var(--primary-font);
+    .cx-body {
+      padding-bottom: 24px !important;
+    }
+  }
+}
+
+.cx-webchat .cx-form th .cx-control-label {
+  direction: ltr;
+  text-align: left;
+}
+
+.cx-webchat .cx-transcript {
+  padding-top: 24px !important;
+}
+
+.cx-webchat .cx-transcript .cx-bubble {
+  text-align: left !important;
+}
+
+.cx-webchat {
+  .cx-message {
+    &.cx-them {
+      .cx-bubble {
+        background: linear-gradient(104deg, #09172d 15.66%, #203961 107.08%);
+        .cx-message-text {
+          color: #fff !important;
+        }
+      }
+      .cx-avatar-wrapper {
+        .cx-avatar {
+          &.user {
+            display: none !important;
+          }
+        }
+      }
+      .cx-bubble-arrow svg * {
+        fill: #09172d !important;
+      }
+    }
+    &.cx-you {
+      .cx-bubble {
+        background-color: #eef2fa !important;
+        .cx-message-text {
+          color: #17658b !important;
+        }
+      }
+      .cx-bubble-arrow svg * {
+        fill: #eef2fa !important;
+      }
+    }
+  }
+}
+
+/* @noflip */
+.cx-webchat .cx-transcript .cx-message.cx-them .cx-bubble-arrow {
+  left: -7px !important;
+}
+
+/* @noflip */
+.cx-webchat .cx-message.cx-you {
+  margin-left: 38px !important;
+}
+
+/* @noflip */
+.cx-webchat .cx-message.cx-them .cx-bubble {
+  margin-left: 0 !important;
+}
+
+/* @noflip */
+.cx-webchat .cx-message.cx-them {
+  margin-right: 38px !important;
+}
+
+.cx-webchat {
+  &.cx-mobile {
+    .cx-transcript {
+      max-height: 70vh;
+    }
+  }
+}
+
+.cx-webchat.cx-desktop {
+  left: 55px !important;
+  right: 0 !important;
+}
+
+.cx-webchat .cx-form-inputs {
+  direction: ltr;
+  text-align: left;
+}
+
+.cx-webchat div.cx-input-container .cx-send {
+  right: 16px !important;
+  left: unset !important;
+  svg {
+    transform: scale(1) !important;
+    &:lang(ar-SA) {
+      transform: scale(1) rotate(180deg) !important;
+    }
+  }
+}
+
+.cx-webchat div.cx-input-container .cx-message-input {
+  color: #fff !important;
+  text-align: left !important;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  padding-right: 40px !important;
+  padding-left: 0px !important;
+  direction: ltr !important;
+  &::-webkit-input-placeholder {
+    color: #fff !important;
+  }
+  &:-moz-placeholder {
+    color: #fff !important;
+  }
+  &::-moz-placeholder {
+    color: #fff !important;
+  }
+  &:-ms-input-placeholder {
+    color: #fff !important;
+  }
+}
+html > body {
+  .cx-webchat div.cx-input-container {
+    border-radius: 8px;
+    border: 1px solid var(--primary-primary, #37bac6) !important;
+    box-shadow: unset !important;
+  }
+  .cx-webchat .cx-input {
+    color: var(--secondary-11-color) !important;
+  }
+  .cx-webchat div.cx-input-container.cx-input-focus {
+    border-radius: 8px;
+    border: 1px solid var(--primary-primary, #37bac6) !important;
+    box-shadow: unset !important;
+  }
+
+  .cx-webchat .cx-alert > .cx-wrapper {
+    padding: 24px !important;
+    margin: 0 !important;
+    border-radius: 42px;
+  }
+  .cx-wrapper p {
+    color: #fff !important;
+  }
+  .cx-webchat .cx-alert > .cx-wrapper {
+    background-color: #09172d !important;
+  }
+  .cx_chat_end_question {
+    color: #fff !important;
+  }
+  .cx-widget.cx-theme-light .cx-smokescreen {
+    border-radius: 42px;
+    background-color: #09172d !important;
+  }
+
+  .cx-widget.cx-theme-light .cx-btn-default:focus,
+  .cx-widget.cx-theme-light .cx-btn-primary:focus,
+  .cx-widget.cx-theme-light .cx-button-group .cx-btn-default:focus,
+  .cx-widget.cx-theme-light .cx-button-group .cx-btn-primary:focus {
+    border-color: #fff !important;
+  }
+}
+/*chatEND*/

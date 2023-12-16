@@ -1,0 +1,34 @@
+repositories {
+	mavenCentral()
+	maven {
+		url = uri('https://repo.itextsupport.com/releases/')
+		name 'iText Repository - releases'
+	}
+	maven {
+		url = uri('https://repo1.maven.org/maven2/')
+		name 'iText Kernel - releases'
+	}
+}
+
+dependencies {
+	implementation group: "com.liferay.portal", name: "release.dxp.api"
+	implementation group: "org.osgi", name: "org.osgi.service.jaxrs"
+
+	implementation group: 'com.itextpdf', name: 'kernel', version: '8.0.0'
+	implementation group: 'com.itextpdf', name: 'html2pdf', version: '5.0.0'
+	implementation group: "javax.mail", name: "javax.mail-api", version: "1.6.2"
+	implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.32'
+	implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.5'
+	// https://mvnrepository.com/artifact/com.itextpdf/typography
+	implementation group: 'com.itextpdf', name: 'typography', version: '4.0.0'
+	implementation group: 'com.itextpdf.licensing', name: 'licensing-base', version: '4.1.0'
+	implementation group: 'org.apache.commons', name: 'commons-csv', version: '1.8'
+
+	// https://mvnrepository.com/artifact/com.jcraft/jsch
+	implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+
+
+
+
+}

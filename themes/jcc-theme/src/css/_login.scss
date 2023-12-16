@@ -1,0 +1,43 @@
+@use "sass:math";
+@use "sass:map";
+$primaryFontFamily: var(--primary-font);
+//color
+$primaryColor: var(--primary-color);
+$secondaryColor: var(--secondary-color);
+$secondary11color: var(--secondary-11-color);
+$primaryColorD1: var(--primary-color-d1); //new #0097A5
+//gradient background
+$gradientBlueHorizontal: var(--gradientBlueHorizontal);
+$langAr: "ar-SA";
+
+#_com_liferay_login_web_portlet_LoginPortlet_loginFormModal {
+    label.control-label {
+        color: #0097A5;
+
+    }
+
+    label {
+        color: #17658B;
+    }
+
+    .btn-primary {
+        background: var(--gradientBlueHorizontal);
+        box-shadow: none !important;
+        padding: 12px 25px 12px 24px;
+        gap: 8px;
+        height: 48px;
+        border-radius: 52px;
+        transition: opacity .5s;
+        margin-right: unset;
+        margin-left: 16px;
+        color: var(--btn-primary-color, #fff);
+    }
+}
+
+.login-container span.taglib-text {
+    color: #0097A5;
+}
+
+.modal-title {
+    color: #17658B;
+}

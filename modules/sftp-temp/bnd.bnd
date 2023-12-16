@@ -1,0 +1,7 @@
+Bundle-Name: sftp-temp
+Bundle-SymbolicName: com.test
+Bundle-Version: 1.0.1
+Export-Package: com.test.constants
+Import-Package: *;version="0";resolution:=optional
+Include-Resource: \
+    @jsch-0.1.55.jar

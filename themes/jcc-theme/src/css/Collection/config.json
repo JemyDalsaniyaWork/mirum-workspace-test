@@ -1,0 +1,27 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "name": "collection",
+          "type": "collectionSelector",
+          "typeOptions": {
+            "itemType": "com.liferay.journal.model.JournalArticle",
+            "itemSubtype": "65959"
+          }
+        },
+        {
+          "name": "customFieldName",
+          "label": "Button Text",
+          "description": "button-text",
+          "type": "text",
+          "typeOptions": {
+            "placeholder": "Placeholder"
+          },
+          "dataType": "string",
+          "defaultValue": "Text19880355"
+        }
+      ]
+    }
+  ]
+}

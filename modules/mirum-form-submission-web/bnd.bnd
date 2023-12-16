@@ -1,0 +1,6 @@
+Bundle-Name: mirum-form-submission-web
+Bundle-SymbolicName: com.mirum.form.submission.internal.action
+Bundle-Version: 1.0.0
+Export-Package: com.mirum.form.submission.internal.action.*
+Web-ContextPath: /mirum-dynamic-data-mapping-form-web
+-dsannotations-options: inherit

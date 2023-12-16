@@ -1,0 +1,214 @@
+.jcc-filter-container {
+  > div {
+    gap: 24px;
+  }
+  select,
+  select:focus {
+    background: none !important;
+  }
+
+  button.dropdown-toggle {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--secondary-11-color);
+  }
+
+  input {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--secondary-11-color);
+    &::-webkit-input-placeholder {
+      font-family: var(--primary-font);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--secondary-11-color);
+    }
+    &:-moz-placeholder {
+      font-family: var(--primary-font);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--secondary-11-color);
+    }
+    &::-moz-placeholder {
+      font-family: var(--primary-font);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--secondary-11-color);
+    }
+    &:-ms-input-placeholder {
+      font-family: var(--primary-font);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--secondary-11-color);
+    }
+  }
+  .input-group-inset-after.form-control {
+    border-bottom-left-radius: 8px !important;
+    border-top-left-radius: 8px !important;
+    border-left-width: 1px !important;
+    &:lang(ar-SA) {
+      border-bottom-right-radius: 8px !important;
+      border-top-right-radius: 8px !important;
+      border-right-width: 1px !important;
+      border-left-width: 0 !important;
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+    }
+  }
+
+  .input-group .input-group-inset-item-after {
+    border-bottom-right-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    border-right-width: 1px !important;
+    &:lang(ar-SA) {
+      border-bottom-left-radius: 8px !important;
+      border-top-left-radius: 8px !important;
+      border-right-width: 0 !important;
+      border-left-width: 1px !important;
+      border-bottom-right-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+  }
+
+  // .d-lg-block {
+  // max-width: 392px;
+  .control-label {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--primary-color-d1);
+  }
+  .lfr-tooltip-scope {
+    height: 40px;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    button {
+      box-shadow: none !important;
+      border: none;
+      height: 40px;
+      background-color: transparent;
+    }
+  }
+  .input-group-inset-item {
+    border-color: var(--gray-300);
+    background-color: transparent;
+    button {
+      box-shadow: none !important;
+      background-color: transparent;
+    }
+    &:focus {
+      border-color: var(--gray-300);
+      button {
+        border-color: var(--gray-300);
+      }
+    }
+  }
+  .input-group-item {
+    box-shadow: none !important;
+    height: 40px;
+    input {
+      &:focus {
+        border-color: var(--gray-300);
+      }
+      box-shadow: none !important;
+      height: 40px;
+      background-color: transparent;
+    }
+  }
+
+  .dropdown {
+    .form-control-select {
+      background: none;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 50px;
+      pointer-events: none;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("https://liferay.biglamp.mirummea.com/documents/44587/44589/icon-curret-down.svg/3cbda763-e0b8-1cf7-0cdf-3be263bf19b7?t=1660211006994");
+    }
+
+    &:lang(ar-SA) {
+      &:after {
+        left: 0;
+        right: unset;
+      }
+    }
+  }
+
+  // }
+}
+// .lfr-tooltip-scope {
+//   position: absolute;
+//   top: 0;
+//   right: 0px;
+//   width: 48px;
+//   height: 48px;
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     pointer-events: none;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-image: url("https://liferay.biglamp.mirummea.com/documents/44587/44589/Icon-filter.svg/4ea35c4a-1547-61c8-6d22-9af8f2b81f2f?t=1660204319238");
+//   }
+//   select,
+//   select:focus {
+//     background: none !important;
+//   }
+
+//   .dropdown {
+//     height: 100%;
+//     width: 100%;
+//     button {
+//       border: 0.25px solid var(--secondary-11-color);
+//       border-radius: 0px;
+//       background: none;
+//       background-image: none !important;
+//       height: 100%;
+//       color: transparent;
+//       box-shadow: none !important;
+//     }
+//   }
+// }
+
+.dropdown-menu {
+  .dropdown-section {
+    button.btn-primary {
+      width: 100%;
+      height: 40px;
+      background: var(--primary-color);
+      border-radius: 4px;
+
+      &:focus {
+        box-shadow: unset !important;
+        outline: unset !important;
+      }
+    }
+  }
+}

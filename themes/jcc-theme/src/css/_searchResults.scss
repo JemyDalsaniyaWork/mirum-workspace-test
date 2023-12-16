@@ -1,0 +1,460 @@
+li.facet-value {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+div#p_p_id_com_liferay_portal_search_web_type_facet_portlet_TypeFacetPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+div#p_p_id_com_liferay_portal_search_web_site_facet_portlet_SiteFacetPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+div#p_p_id_com_liferay_portal_search_web_tag_facet_portlet_TagFacetPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+div#p_p_id_com_liferay_portal_search_web_folder_facet_portlet_FolderFacetPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+  width: auto;
+}
+
+div#p_p_id_com_liferay_portal_search_web_user_facet_portlet_UserFacetPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+div#p_p_id_com_liferay_portal_search_web_modified_facet_portlet_ModifiedFacetPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+div#p_p_id_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+div#p_p_id_com_liferay_portal_search_web_search_options_portlet_SearchOptionsPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+div#p_p_id_com_liferay_portal_search_web_category_facet_portlet_CategoryFacetPortlet_INSTANCE_AY8bp66zj9rv_ {
+  vertical-align: middle;
+  display: inline-block;
+}
+.custom-control-input ~ .custom-control-label::before {
+  opacity: 0;
+}
+a.collapse-icon.panel-header.panel-header-link,
+.facet-clear-btn {
+  display: none !important;
+}
+
+.portlet-dropzone {
+  padding-top: 80px;
+  padding-left: 160px;
+  padding-right: 160px;
+  margin-bottom: 140px;
+}
+
+@media (max-width: 767.98px) {
+  .portlet-dropzone {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.portlet-search-bar {
+  .input-group {
+    align-items: center;
+  }
+  .portlet-content {
+    height: 48px;
+    border-radius: 72px;
+    border-color: rgba(238, 242, 250, 1);
+  }
+
+  .portlet-content {
+    position: relative;
+    height: 64px;
+    padding: 0 24px;
+    align-items: center;
+    border-radius: 42px;
+  }
+  .portlet-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 42px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  .portlet-content::before {
+    padding: 2px;
+    background: linear-gradient(to bottom, #37bac6, #17658b);
+  }
+  .portlet-content-container {
+    display: flex;
+    flex: 100%;
+    .portlet-body {
+      flex: 1 1 100%;
+      height: 100%;
+    }
+    .search-bar-keywords-input {
+      background: transparent;
+      border: none;
+    }
+    .input-group-item .input-group-inset ~ .input-group-inset-item {
+      border-radius: 24px;
+      background: var(--info-info-l-2, #eef2fa);
+      border: none !important;
+    }
+  }
+  .portlet-content {
+    display: flex;
+  }
+  .portlet-content-container
+    .input-group-item
+    .input-group-inset
+    ~ .input-group-inset-item {
+    width: 48px;
+    height: 48px;
+  }
+  .input-group .input-group-inset-item .btn {
+    width: 48px;
+    height: 48px;
+  }
+  .search-bar-suggestions-results-list {
+    .dropdown-item {
+      padding-right: 36px;
+      padding-left: 36px;
+      .suggestion-item-title {
+        color: var(--secondary-secondary, #17658b);
+        text-align: right;
+        /* 14/Regular - Arabic */
+        font-family: "29LT Bukra";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px; /* 178.571% */
+      }
+    }
+
+    .search-bar-suggestions-dropdown-menu .search-bar-suggestions-show-more {
+      color: var(--secondary-secondary, #17658b) !important;
+      text-align: right;
+      /* 14/Regular - Arabic */
+      font-family: 29LT Bukra;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px;
+    }
+    .input-group .input-group-inset-item .btn .lexicon-icon {
+      fill: #37bac6;
+      // fill: var(
+      //   --gradientBlueVertical,
+      //   linear-gradient(180deg, #37bac6 0%, #17658b 100%)
+      // );
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .portlet-type-facet,
+  .portlet-tag-facet,
+  .portlet-category-facet {
+    .panel-body {
+      padding: 0 !important;
+    }
+  }
+}
+
+.portlet-type-facet,
+.portlet-tag-facet,
+.portlet-category-facet {
+  .portlet {
+    margin-bottom: 0 !important;
+  }
+  .panel-body {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    .list-unstyled {
+      margin-bottom: 0 !important;
+    }
+  }
+  .facet-value {
+    .facet-term-unselected {
+      font-weight: 600 !important;
+      color: #17658b;
+    }
+    .facet-term-selected {
+      color: #09172d !important;
+      border-bottom: 2px solid #8fe7ef !important;
+    }
+    button {
+      font-family: 29LT Bukra;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 180%;
+      padding: 0 10px;
+      opacity: 1 !important;
+      gap: 5px !important;
+      border-bottom: 2px solid transparent;
+      .term-count {
+        font-weight: inherit !important;
+      }
+      &:hover {
+        border-bottom: 2px solid #8fe7ef;
+        text-decoration: none !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .portlet-search-results {
+    .portlet-content {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .pagination-bar {
+      .pagination {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.portlet-search-results {
+  .search-document-tags {
+    display: none;
+  }
+  .portlet-content {
+    padding-top: 32px !important;
+  }
+  .list-group-item-flex {
+    .list-group-subtext {
+      strong {
+        font-weight: 400 !important;
+      }
+    }
+    .autofit-col {
+      padding-left: 16px;
+    }
+  }
+
+  .portlet-content-container {
+    padding-top: 32px;
+    border-top: 2px solid #f0f2f2;
+  }
+
+  .pagination-bar {
+    flex-direction: row !important;
+    margin-bottom: 48px !important;
+    .pagination {
+      order: 1;
+      flex-basis: 100%;
+      margin-bottom: 16px;
+      .page-item {
+        border-color: 0.5px solid #cdd2d9;
+      }
+      .page-link {
+        opacity: 1 !important;
+        color: #09172d;
+        font-size: 16px;
+        .lexicon-icon {
+          color: #17658b !important;
+        }
+      }
+    }
+
+    .dropdown-toggle {
+      color: #17658b;
+    }
+
+    .pagination-items-per-page {
+      order: 2;
+      flex-basis: auto;
+      margin-right: 16px;
+      .lexicon-icon {
+        margin-top: 0 !important;
+      }
+    }
+    .pagination-results {
+      margin-top: 8px;
+      order: 3;
+      display: block;
+      flex-basis: 50%;
+      font-weight: bold;
+    }
+  }
+  .portlet-title-text {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: #17658b !important;
+    font-weight: bold;
+  }
+}
+
+.portlet-search-bar {
+  .display-list {
+    .list-group-item {
+      border: none;
+    }
+  }
+}
+
+.portlet-search-results {
+  .display-list {
+    .list-group-item {
+      cursor: pointer;
+      padding-right: 60px !important;
+      &:hover {
+        box-shadow: 0px 2px 4px 0px rgba(39, 40, 51, 0.12);
+      }
+    }
+  }
+}
+
+.search-bar-suggestions-dropdown-menu
+  .search-bar-suggestions-results-list
+  .dropdown-subheader {
+  display: none !important;
+}
+.search-bar-suggestions-dropdown-menu
+  .search-bar-suggestions-results-list
+  .suggestion-item-title {
+  color: rgba(23, 101, 139, 1);
+}
+.search-bar-suggestions-dropdown-menu .search-bar-suggestions-show-more {
+  color: rgba(23, 101, 139, 1);
+  &:after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    background-image: url("/documents/d/jcc/Icon-circle-arrow-left?download=true");
+    width: 16px;
+    height: 17px;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+  }
+}
+
+.search-bar-suggestions-dropdown-menu .search-bar-suggestions-show-more {
+  align-items: center !important;
+  display: flex !important;
+}
+.input-group .input-group-inset-item .btn .lexicon-icon {
+  width: 24px;
+  height: 24px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.list-group-item-flex {
+  display: flex;
+  margin-bottom: 16px;
+  padding-right: 12px;
+  padding-left: 12px;
+  background: rgba(245, 247, 250, 1);
+  border: none;
+}
+.list-group-subtext {
+  color: #17658b;
+}
+.list-group-item-flex {
+  &:before {
+    content: "";
+    display: flex;
+    position: absolute;
+    background-image: url("../images/application/bigCircle-arrow.svg");
+    width: 40px;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    right: 16px;
+    height: 100%;
+    top: 0;
+    background-position: center;
+    transform: rotate(180deg);
+  }
+  &:lang(ar-SA) {
+    &:before {
+      transform: none !important;
+    }
+  }
+}
+.list-group-item-flex .autofit-col {
+  padding-left: 72px;
+  padding-right: 0.7rem;
+}
+.subtext-item {
+  color: var(--secondary-secondary, #17658b);
+}
+.list-group-title {
+  color: var(--dark-dark, #09172d);
+}
+
+.portlet-boundary_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_ {
+  margin: 0 auto !important;
+  display: block !important;
+}
+.pagination-bar .page-item.active .page-link {
+  background-color: transparent;
+}
+
+.pagination-bar {
+  align-items: flex-start;
+}
+
+.pagination-bar .page-item {
+  justify-content: center;
+}
+.pagination-bar .pagination-results {
+  color: var(--secondary-secondary, #17658b);
+}
+
+.pagination-items-per-page {
+  .page-link {
+    background-color: rgba(238, 244, 250, 1);
+  }
+}
+.taglib-empty-result-message {
+  border: none;
+}
+
+.sheet-text.text-center {
+  color: var(--dark-dark, #09172d);
+  text-align: center;
+  /* 20/Semibold - Arabic */
+  font-family: 29LT Bukra;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 30px */
+}
+.search-total-label {
+  display: none;
+}
+
+.portlet-search-bar {
+  margin-top: 140px;
+  margin-bottom: 32px;
+}
+
+.portlet-boundary_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_ {
+  padding-bottom: 80px;
+}
+//boundary_com_liferay_portal_search_web_search_bar_portlet_SearchBarPortlet_

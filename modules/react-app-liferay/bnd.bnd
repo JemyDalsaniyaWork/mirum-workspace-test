@@ -1,0 +1,5 @@
+Bundle-Name: react-app-liferay
+Bundle-SymbolicName: com.react.test
+Bundle-Version: 1.0.0
+Export-Package: com.react.test.constants
+Web-ContextPath: /react-app-liferay

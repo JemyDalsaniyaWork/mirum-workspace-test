@@ -1,0 +1,12 @@
+{
+	"config": {
+		"imports": {
+			"dynamic-data-mapping-form-field-type": {
+				"/": ">=4.0.25"
+			}
+		}
+	},
+
+	"preset": "@liferay/npm-bundler-preset-liferay-dev",
+	"output": "build/resources/main/META-INF/resources"
+}
