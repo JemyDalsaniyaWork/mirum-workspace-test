@@ -147,7 +147,7 @@ public class MyScheduledJob extends BaseDispatchTaskExecutor {
 
                         List<DDMFormField> ddmFormFieldList = ddmFormInstance.getDDMForm().getDDMFormFields();
                         for (DDMFormField ddmFormField : ddmFormFieldList) {
-                            if (!csvMapData.containsKey(ddmFormField.getName()) && !ddmFormField.getType().equals("separator")) {
+                            if (!csvMapData.containsKey(ddmFormField.getName()) && !ddmFormField.getType().equals("separator") && !ddmFormField.getType().equals("paragraph")) {
                                 Map<Integer, String> map = new HashMap<>();
                                 map.put(csvIndex++, ddmFormField.getLabel().getString(ddmFormField.getLabel().getDefaultLocale()));
                                 csvMapData.put(ddmFormField.getName(), map);
