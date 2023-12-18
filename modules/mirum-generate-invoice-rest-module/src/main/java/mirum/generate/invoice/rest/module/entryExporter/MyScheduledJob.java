@@ -135,17 +135,19 @@ public class MyScheduledJob extends BaseDispatchTaskExecutor {
                     String newCsvFilePath = folderPath + "form_entries_" + ddmFormInstance.getName(defaultLocale) + ".csv";
                     _log.info("Created file path: " + newCsvFilePath);
                     File newCsvFile = new File(newCsvFilePath);
+                    FileWriter fileWriter = null;
+                    CSVPrinter csvPrinter = null;
 
                     try {
-                        FileWriter fileWriter = new FileWriter(newCsvFilePath);
-                        CSVPrinter csvPrinter = new CSVPrinter(fileWriter, CSVFormat.DEFAULT);
+                        fileWriter = new FileWriter(newCsvFilePath);
+                        csvPrinter = new CSVPrinter(fileWriter, CSVFormat.DEFAULT);
 
                         Map<String, Map<Integer, String>> csvMapData = new HashMap<>();
                         int csvIndex = 0;
 
                         List<DDMFormField> ddmFormFieldList = ddmFormInstance.getDDMForm().getDDMFormFields();
                         for (DDMFormField ddmFormField : ddmFormFieldList) {
-                            if (!csvMapData.containsKey(ddmFormField.getName())) {
+                            if (!csvMapData.containsKey(ddmFormField.getName()) && !ddmFormField.getType().equals("separator")) {
                                 Map<Integer, String> map = new HashMap<>();
                                 map.put(csvIndex++, ddmFormField.getLabel().getString(ddmFormField.getLabel().getDefaultLocale()));
                                 csvMapData.put(ddmFormField.getName(), map);
@@ -184,22 +186,26 @@ public class MyScheduledJob extends BaseDispatchTaskExecutor {
                                                 data[key] = getFormFieldValueAsString(ddmFormFieldValue, val).trim());
                                     }
                                 }
+
                             }
                             List<String> listData = Arrays.stream(data).collect(Collectors.toList());
                             csvPrinter.printRecord(listData);
                         }
-                        csvPrinter.flush();
-                        csvPrinter.close();
-                        fileWriter.close();
                         // Delete old files
                         // deleteOldFiles(newCsvFile, folderPath);
                     } catch (Exception e) {
                         e.printStackTrace();
+                    } finally {
+                        if (Validator.isNotNull(csvPrinter)) {
+                            csvPrinter.flush();
+                            csvPrinter.close();
+                            fileWriter.close();
+                        }
                     }
                 }
                 return folderPath;
             }
-        } catch (PortalException e) {
+        } catch (PortalException | IOException e) {
             _log.info("Error getting form instances", e);
         }
         return "";
