@@ -1,0 +1,5 @@
+Bundle-Name: commerce-payment-method-amazon
+Bundle-SymbolicName: com.liferay.commerce.payment.method.amazon
+Bundle-Version: 1.0.0
+Web-ContextPath: /amazon-commerce-payment-method
+Export-Package: com.liferay.commerce.payment.method.amazon

@@ -1,8 +1,0 @@
-.gradle/
-build/
-node_modules/
-target/
-bin
-.settings
-.project
-.classpath
