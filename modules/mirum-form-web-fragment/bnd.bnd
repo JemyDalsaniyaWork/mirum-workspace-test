@@ -1,0 +1,5 @@
+Bundle-Name: mirum-form-web-fragment
+Bundle-SymbolicName: mirum.form.web.fragment
+Bundle-Version: 1.0.0
+Fragment-Host: com.liferay.dynamic.data.mapping.form.web;bundle-version="4.0.101"
+Portal-Bundle-Version: 7.4.13

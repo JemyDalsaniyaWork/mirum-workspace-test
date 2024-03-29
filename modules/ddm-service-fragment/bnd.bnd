@@ -1,0 +1,6 @@
+Bundle-Name: ddm-service-fragment
+Bundle-SymbolicName: ddm.service.fragment
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.dynamic.data.mapping.internal.notification
+Fragment-Host: com.liferay.dynamic.data.mapping.service;bundle-version="7.0.30"
+Portal-Bundle-Version: 7.4.13

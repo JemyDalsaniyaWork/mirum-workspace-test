@@ -1,0 +1,6 @@
+Bundle-Name: override-liferay-form-field
+Bundle-SymbolicName: override.liferay.form.field
+Bundle-Version: 1.0.0
+Liferay-JS-Config: /META-INF/resources/js/config.js
+Web-ContextPath: /override-liferay-form-field
+Export-Package: override.liferay.form.field.constants

@@ -1,5 +1,7 @@
 package com.mirum.form.submission.internal.action.portlet;
 
+import com.liferay.asset.kernel.model.AssetEntry;
+import com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil;
 import com.liferay.captcha.util.CaptchaUtil;
 import com.liferay.commerce.account.model.CommerceAccount;
 import com.liferay.commerce.account.service.CommerceAccountLocalServiceUtil;
@@ -185,8 +187,6 @@ public class MirumFormSubmissionMVCActionCommand extends BaseMVCActionCommand {
         _log.info("Secondary Quantity = " + specialQuantity);
         String isOfflinePaymentValue = _getByFieldReference(ddmFormValues, formInstanceId, "isOfflinePayment");
         _log.info("isOfflinePayment is : " + isOfflinePaymentValue);
-        String customField = _getByFieldReference(ddmFormValues, formInstanceId, "SuperDEV24CustomFormField23907418");
-        _log.info("Custom Field = " + customField);
         if(Validator.isNotNull(productQuantity)){
             finalQuantity = productQuantity;
         }else if(Validator.isNotNull(primaryQuantity)){
@@ -196,9 +196,20 @@ public class MirumFormSubmissionMVCActionCommand extends BaseMVCActionCommand {
         }
 
         String currentLanguage = ParamUtil.getString(actionRequest, "languageId");
+        if(Validator.isNull(currentLanguage)){
+            String[] values = ddmFormInstance.getAvailableLanguageIds();
+            for (String value : values){
+                String fieldValue = ddmFormValues.getDDMFormFieldValues().get(0).getValue().getValues().get(LocaleUtil.fromLanguageId(value));
+                if(Validator.isNotNull(fieldValue) && !fieldValue.equals("[]")){
+                    currentLanguage = value;
+                }
+            }
+        }
+
+        _log.info("Current Language = " + ddmFormInstance.getDDMForm().getDDMFormFields().get(0).isLocalizable());
 
         String[] productType = new String[]{primaryProduct};
-        List<String> productList = null;
+        List<String>    productList = null;
 
         if (Validator.isNull(primaryProduct)) {
             productType = new String[]{product};
@@ -451,11 +462,9 @@ public class MirumFormSubmissionMVCActionCommand extends BaseMVCActionCommand {
                         "orderId"
                 )) {
 
-                    LocalizedValue localizedValue = new LocalizedValue(themeDisplay.getLocale());
+//                    LocalizedValue localizedValue = new LocalizedValue(themeDisplay.getLocale());
 //                    LocalizedValue localizedValue = new LocalizedValue(LocaleUtil.getDefault());
-
-                    _log.info("locale default: " + LocaleUtil.getDefault());
-                    _log.info("localized value for erc: " + localizedValue);
+                    LocalizedValue localizedValue = new LocalizedValue(LocaleUtil.fromLanguageId(currentLanguage));
 
                     for (Locale availableLocale : ddmForm.getAvailableLocales()) {
                         _log.info("availableLocale for erc: " + availableLocale);
@@ -527,7 +536,6 @@ public class MirumFormSubmissionMVCActionCommand extends BaseMVCActionCommand {
         } catch (Exception ex) {
             if (_log.isErrorEnabled()) {
                 _log.error("error: " + ex.getMessage());
-                ex.printStackTrace();
             }
             //throw an exception
             SessionErrors.add(actionRequest, UserEmailAddressException.MustNotBeDuplicate.class);
@@ -805,7 +813,9 @@ public class MirumFormSubmissionMVCActionCommand extends BaseMVCActionCommand {
             ServiceContext serviceContext, long userId)
             throws Exception {
 
-        // CUSTOM
+        //CUSTOM
+
+        DDMFormInstanceRecord ddmFormInstanceRecord = null;
 
         long ddmFormInstanceRecordId = ParamUtil.getLong(
                 actionRequest, "formInstanceRecordId");
@@ -815,23 +825,15 @@ public class MirumFormSubmissionMVCActionCommand extends BaseMVCActionCommand {
         }
 
         if (ddmFormInstanceRecordId != 0) {
-          _log.info("ddmFormInstanceRecord inside if condition .............................");
-            _ddmFormInstanceRecordService.updateFormInstanceRecord(
+            ddmFormInstanceRecord = _ddmFormInstanceRecordService.updateFormInstanceRecord(
                     ddmFormInstanceRecordId, false, ddmFormValues, serviceContext);
         } else {
-            _log.info("inside else condition #####################################");
             DDMFormInstanceRecordVersion ddmFormInstanceRecordVersion =
                     _ddmFormInstanceRecordVersionLocalService.
                             fetchLatestFormInstanceRecordVersion(
                                     userId, ddmFormInstance.getFormInstanceId(),
                                     ddmFormInstance.getVersion(),
                                     WorkflowConstants.STATUS_DRAFT);
-
-//            DDMFormInstanceRecordVersion ddmFormInstanceRecordVersion1 = null;
-//            ddmFormInstanceRecordVersion1.getFormInstanceRecord();
-//                    _ddmFormInstanceRecordVersionLocalService.updateDDMFormInstanceRecordVersion()
-
-            //if(wo)
 
             if (_log.isInfoEnabled()) {
                 _log.info("form instance record version = " + ddmFormInstanceRecordVersion);
@@ -841,7 +843,7 @@ public class MirumFormSubmissionMVCActionCommand extends BaseMVCActionCommand {
                 if (_log.isInfoEnabled()) {
                     _log.info("add form = " + ddmFormInstance.getFormInstanceId());
                 }
-                _ddmFormInstanceRecordService.addFormInstanceRecord(
+                ddmFormInstanceRecord = _ddmFormInstanceRecordService.addFormInstanceRecord(
                         groupId, ddmFormInstance.getFormInstanceId(),
                         ddmFormValues, serviceContext);
                 if (_log.isInfoEnabled()) {
@@ -849,11 +851,16 @@ public class MirumFormSubmissionMVCActionCommand extends BaseMVCActionCommand {
                 }
 
             } else {
-                _ddmFormInstanceRecordService.updateFormInstanceRecord(
+                ddmFormInstanceRecord = _ddmFormInstanceRecordService.updateFormInstanceRecord(
                         ddmFormInstanceRecordVersion.getFormInstanceRecordId(),
                         false, ddmFormValues, serviceContext);
             }
         }
+
+        AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(DDMFormInstanceRecord.class.getName(), ddmFormInstanceRecord.getFormInstanceRecordId());
+        _log.info("Asset Entry Title ==> " + assetEntry.getTitle() + " " + ddmFormInstanceRecord.getFormInstanceRecordId());
+        assetEntry.setTitle(assetEntry.getTitle() + " " + ddmFormInstanceRecord.getFormInstanceRecordId());
+        AssetEntryLocalServiceUtil.updateAssetEntry(assetEntry);
     }
 
     private void _validateCaptcha(

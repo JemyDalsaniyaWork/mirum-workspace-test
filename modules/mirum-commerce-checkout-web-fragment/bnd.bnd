@@ -1,0 +1,6 @@
+Bundle-Name: mirum-commerce-checkout-web-fragment
+Bundle-SymbolicName: mirum.commerce.checkout.web.fragment
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.commerce.checkout.web.internal.display.context,\
+mirum.commerce.checkout.web.fragment.util
+Fragment-Host: com.liferay.commerce.checkout.web;bundle-version="5.0.48"

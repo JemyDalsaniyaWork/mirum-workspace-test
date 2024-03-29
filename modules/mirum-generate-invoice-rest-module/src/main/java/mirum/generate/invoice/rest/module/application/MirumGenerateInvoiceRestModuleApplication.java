@@ -52,7 +52,6 @@ import org.osgi.service.jaxrs.whiteboard.JaxrsWhiteboardConstants;
         property = {
                 JaxrsWhiteboardConstants.JAX_RS_APPLICATION_BASE + "=/mirum",
                 JaxrsWhiteboardConstants.JAX_RS_NAME + "=Greetings.Rest"
-
         },
         service = Application.class
 )
