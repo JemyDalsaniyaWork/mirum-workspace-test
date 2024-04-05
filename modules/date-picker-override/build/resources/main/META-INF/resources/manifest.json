@@ -1,0 +1,25 @@
+{
+  "packages": {
+    "/": {
+      "dest": {
+        "dir": "./build/resources/main/META-INF/resources",
+        "id": "/",
+        "name": "dynamic-data-date-picker-override-form-field",
+        "version": "1.0.0"
+      },
+      "modules": {
+        "date-picker-override.es.js": {
+          "flags": {
+            "esModule": true
+          }
+        }
+      },
+      "src": {
+        "dir": ".",
+        "id": "/",
+        "name": "dynamic-data-date-picker-override-form-field",
+        "version": "1.0.0"
+      }
+    }
+  }
+}
