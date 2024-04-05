@@ -1,0 +1,25 @@
+{
+  "packages": {
+    "/": {
+      "dest": {
+        "dir": "./build/resources/main/META-INF/resources",
+        "id": "/",
+        "name": "dynamic-data-mapping-form-field-type-register-password",
+        "version": "1.0.0"
+      },
+      "modules": {
+        "password/Password.es.js": {
+          "flags": {
+            "esModule": true
+          }
+        }
+      },
+      "src": {
+        "dir": ".",
+        "id": "/",
+        "name": "dynamic-data-mapping-form-field-type-register-password",
+        "version": "1.0.0"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+Bundle-Name: date-picker-override
+Bundle-SymbolicName: date.picker.override
+Bundle-Version: 1.0.0
+Liferay-JS-Config: /META-INF/resources/config.js
+Provide-Capability:\
+	soy;\
+		type:String="LiferayFormField"
+Web-ContextPath: /dynamic-data-date-picker-override-form-field
